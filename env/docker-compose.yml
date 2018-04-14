@@ -1,0 +1,9 @@
+version: '3'
+
+services: 
+  platoon-centos:
+    image: platoon-centos
+    build: ./platoon-centos
+  platoon-jenkins:
+    image: platoon-jenkins
+    build: ./platoon-jenkins
