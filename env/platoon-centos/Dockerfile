@@ -7,7 +7,38 @@ RUN yum update -y
 RUN yum upgrade -y
 
 # Install some basic commands
-RUN yum install -y nano wget sudo net-tools ca-certificates unzip iputils links deltarpm
+RUN yum install -y nano
+RUN yum install -y wget
+RUN yum install -y sudo
+RUN yum install -y net-tools
+RUN yum install -y ca-certificates
+RUN yum install -y unzip
+RUN yum install -y iputils
+RUN yum install -y links
+RUN yum install -y deltarpm
+RUN yum install -y curl
+
+# Install EPEL repo.
+#RUN yum -y install http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
+
+
+# Other options - add to dockerfile if it turns out we need them
+#bash-completion
+#pwgen
+#mc
+#openssh-clients
+#openssh-server
+#syslog-ng
+#syslog-ng-libdbi
+#yum-plugin-fastestmirror
+#screen
+#tmux
+
+
+
+
+# Clean up YUM when done.
+RUN yum clean all
 
 # Create a user and group that will be used to launch processes (in other images based off this one)
 # The user ID 1000 is the default for the first "regular" user on Fedora/RHEL,

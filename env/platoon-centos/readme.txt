@@ -10,6 +10,7 @@ The image has some basic tools installed like:
  - iputils
  - links (Command line browser)
  - deltarpm
+ - curl
  
 Additionally the image has a new single system user with its home directory at /opt/platoon,
 this allows all platoon software intallations to be placed within /opt/platoon

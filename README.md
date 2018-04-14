@@ -8,13 +8,17 @@ Components in the stack:
 * Jenkins Build Server
 * GitLab SCM Server
 
+
 The demonstration uses Docker Compose to bootstrap a full development environment for easy demonstration
 
 Other Ideas:
+* Hygieia
+* Artifactory
+* Prometheus
 * Some method to visualise the environment in real time
 * NGINX as a Reverse Proxy
 * HAProxy with multiple Web Servers
 * SonarQube
 * Monitoring Solution
 * ElasticSearch
-*
+* MQ
