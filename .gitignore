@@ -2,6 +2,10 @@
 volumes/jenkins
 volumes/sling
 
+# Generated Docs
+docs/developer_manual/build
+docs/user_manual/build
+
 # Compiled class file
 *.class
 
