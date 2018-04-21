@@ -1,12 +1,12 @@
-The image is based on platoon-openjdk
+The image is based on platoon-centos
 
 Build this image on your machine with the following command:
-docker build -t platoon-jenkins .
+docker build -t platoon-gitlab .
 
 Create a container from this image with:
-docker run -i -P --name jenkins platoon-jenkins
+docker run -i -P --name gitlab platoon-gitlab
 
 Then you can connect to the container using:
-docker exec -it jenkins bash
+docker exec -it gitlab bash
 
 
