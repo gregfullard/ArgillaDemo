@@ -1,29 +1,45 @@
-# Looked at:
-# - https://stelligent.com/2017/04/13/containerizing-jenkins-with-docker-and-centos/
-# - https://github.com/internavenue/docker-centos-jenkins
-FROM platoon-openjdk
-MAINTAINER Greg Fullard
+FROM jenkins/jenkins:lts
+
 USER root
+RUN apt-get update \
+      && apt-get install -y sudo curl\
+      && apt-get install -y libltdl7\
+      && rm -rf /var/lib/apt/lists/*
+RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
-# Install jenkins
-RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
-RUN rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
-#RUN yum install -y openssl-devel
-#RUN yum install -y python-devel
-#RUN yum install -y which
-#RUN yum install -y epel-release
-#RUN yum install -y kernel-headers
-#RUN yum install -y kernel-devel
-RUN yum install -y jenkins
+# getting the docker-cli
+# --- Attention: docker.sock needs to be mounted as volume in docker-compose.yml
+# see: https://issues.jenkins-ci.org/browse/JENKINS-35025
+# see: https://get.docker.com/builds/
+# see: https://wiki.jenkins-ci.org/display/JENKINS/CloudBees+Docker+Custom+Build+Environment+Plugin#CloudBeesDockerCustomBuildEnvironmentPlugin-DockerinDocker
+RUN curl -sSL -o /bin/docker https://get.docker.io/builds/Linux/x86_64/docker-latest
+RUN chmod +x /bin/docker
 
-# Clean up YUM when done.
-RUN yum clean all
+USER jenkins
 
-RUN chown -c platoon /var/lib/jenkins
-#    chsh -s /bin/bash platoon
+# installing specific list of plugins. see: https://github.com/jenkinsci/docker#preinstalling-plugins
+COPY plugins.txt /usr/share/jenkins/plugins.txt
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/plugins.txt
 
-# Expose the ports we're interested in
-EXPOSE 8080 22
+# Adding default Jenkins Seed Job
+COPY jobs/job-dsl-seed-job.xml /usr/share/jenkins/ref/jobs/job-dsl-seed-job/config.xml
 
-# Kicking in
-CMD ["java", "-jar", "/usr/lib/jenkins/jenkins.war"]
+############################################
+# Configure Jenkins
+############################################
+# Jenkins settings
+COPY config/config.xml /usr/share/jenkins/ref/config.xml
+
+# Jenkins Settings, i.e. Maven, Groovy, ...
+COPY config/hudson.tasks.Maven.xml /usr/share/jenkins/ref/hudson.tasks.Maven.xml
+COPY config/hudson.plugins.groovy.Groovy.xml /usr/share/jenkins/ref/hudson.plugins.groovy.Groovy.xml
+COPY config/maven-global-settings-files.xml /usr/share/jenkins/ref/org.jenkinsci.plugins.configfiles.GlobalConfigFiles.xml
+
+# SSH Keys & Credentials
+COPY config/credentials.xml /usr/share/jenkins/ref/credentials.xml
+COPY config/ssh-keys/cd-demo /usr/share/jenkins/ref/.ssh/id_rsa
+COPY config/ssh-keys/cd-demo.pub /usr/share/jenkins/ref/.ssh/id_rsa.pub
+
+# tell Jenkins that no banner prompt for pipeline plugins is needed
+# see: https://github.com/jenkinsci/docker#preinstalling-plugins
+RUN echo 2.0 > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state

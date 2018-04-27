@@ -1,3 +1,1 @@
-Docker volumes will be created in this folder when you run docker-compose up
-
-Note: These files are excluded from SCMin the .gitignore file
+This folder will contain the mounted volumes for the various docker images that run when you fire up docker compose

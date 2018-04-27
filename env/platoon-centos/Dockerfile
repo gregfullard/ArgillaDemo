@@ -17,6 +17,7 @@ RUN yum install -y iputils
 RUN yum install -y links
 RUN yum install -y deltarpm
 RUN yum install -y curl
+RUN yum install -y tzdata
 
 # Install EPEL repo.
 #RUN yum -y install http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
