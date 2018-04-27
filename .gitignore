@@ -1,6 +1,15 @@
 # Docker Volumes
 volumes/jenkins
 volumes/sling
+volumes/artifactory/access
+volumes/artifactory/backup
+volumes/artifactory/data
+volumes/artifactory/etc
+volumes/artifactory/logs
+volumes/gitlab/config
+volumes/gitlab/data
+volumes/gitlab/log
+volumes/sonar/data
 
 # Generated Docs
 docs/developer_manual/build
