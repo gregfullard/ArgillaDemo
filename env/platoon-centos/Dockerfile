@@ -22,7 +22,6 @@ RUN yum install -y tzdata
 # Install EPEL repo.
 #RUN yum -y install http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
 
-
 # Other options - add to dockerfile if it turns out we need them
 #bash-completion
 #pwgen
@@ -35,9 +34,6 @@ RUN yum install -y tzdata
 #screen
 #tmux
 
-
-
-
 # Clean up YUM when done.
 RUN yum clean all
 
@@ -45,14 +41,20 @@ RUN yum clean all
 # The user ID 1000 is the default for the first "regular" user on Fedora/RHEL,
 # so there is a high chance that this ID will be equal to the current user
 # making it easier to use volumes (no permission issues)
-RUN groupadd -r platoon -g 1000 && useradd -u 1000 -r -g platoon -m -d /opt/platoon -s /bin/bash -c "Platoon user" platoon && \
-    chmod 755 /opt/platoon
+#RUN groupadd -r platoon -g 1000 && useradd -u 1000 -r -g platoon -m -d /opt/platoon -s /bin/bash -c "Platoon user" platoon && \
+#    chmod 755 /opt/platoon
+RUN groupadd -r platoon -g 1000 && useradd -u 1000 -r -g platoon -m -s /bin/bash -c "Platoon user" platoon
+
+# Create the /opt/platoon folder in which most software should be installed
+RUN mkdir /opt/platoon
+RUN chmod 755 /opt/platoon
+RUN chown platoon:platoon /opt/platoon
 
 # Set the working directory
-WORKDIR /home
+WORKDIR /home/platoon
 
-# Copy a test file into the image
-COPY readme.txt /home/readme.txt
+# Copy the readme file into the image
+COPY readme.txt /home/platoon/readme.txt
 
 # Write out the contents of the home folder and wrap up
 RUN ls

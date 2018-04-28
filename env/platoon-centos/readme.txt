@@ -11,16 +11,20 @@ The image has some basic tools installed like:
  - links (Command line browser)
  - deltarpm
  - curl
- 
-Additionally the image has a new single system user with its home directory at /opt/platoon,
-this allows all platoon software intallations to be placed within /opt/platoon
+
+The image has a single system user with its home directory at /home/platoon
+
+This user should be the user for everything running on the machine.
+
+Additionally, a folder has been created at /opt/platoon which is owned by the platoon user.
+Ideally all manually installed software should be placed at that location.
 
 The image is based off the base image from DockerHub (https://hub.docker.com/_/centos/)
 We are using centos:7
 
 Note: If you have not pulled the image yet, you may want to run the following command first
 docker pull centos:7
-(Note: You will require a username for DockerHub)
+(Note: You will require a username for DockerHub, use "docker login" to login from terminal)
 
 Build this image on your machine with the following command:
 docker build -t platoon-centos .
