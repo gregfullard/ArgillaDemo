@@ -1,5 +1,8 @@
-# DevOpsDemo
-A demonstration project to put together a DevOps pipeline that is useful for large audience presentations.
+# Argilla Demo
+A demonstration project to show the various components of the Argilla Framework working together.
+The demonstrations is designed to be useful for large audience presentations.
+
+For full details of the Argilla Framework please refer to the Argilla Repository
 
 Components in the stack:
 * GitLab SCM Server
@@ -55,6 +58,9 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Install default plugins
      * Install Blue Ocean plugin
      * Install GitLab plugin
+* Artifactory
+     * Open Home page
+     * Configure admin user
 
 ## Kill'em all
 If you want to totally remove all containers from yur machine:
