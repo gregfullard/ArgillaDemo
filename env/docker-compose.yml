@@ -5,13 +5,51 @@ services:
     build: ./platoon-centos
   platoon-openjdk:
     build: ./platoon-openjdk
-  platoon-artifactory:
-    #restart: always
-    image: docker.bintray.io/jfrog/artifactory-oss:latest
-    ports:
-      - "8081:8081"
-    volumes:
-      - ../volumes/artifactory:/var/opt/jfrog/artifactory
+#  platoon-artifactory:
+#    #restart: always
+#    image: docker.bintray.io/jfrog/artifactory-oss:latest
+#    ports:
+#      - "8081:8081"
+#    volumes:
+#      - ../volumes/artifactory:/var/opt/jfrog/artifactory
+#  platoon-sonardb:
+#    #restart: always
+#    image: postgres:9.6
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - ../volumes/sonar/data:/var/lib/postgresql/data
+#    environment:
+#     - POSTGRES_USER=sonar
+#     - POSTGRES_PASSWORD=sonar
+#  platoon-sonar:
+#    #restart: always
+#    image: sonarqube
+#    ports:
+#     - "19000:9000"
+#     - "19092:9092"
+#    depends_on:
+#      - platoon-sonardb
+#    environment:
+#     - SONARQUBE_JDBC_URL=jdbc:postgresql://sonardb:5432/sonar
+#     - SONARQUBE_JDBC_USERNAME=sonar
+#     - SONARQUBE_JDBC_PASSWORD=sonar
+#  platoon-gitlab:
+#    image: 'gitlab/gitlab-ce:latest'
+#    restart: always
+#    hostname: 'gitlab.example.com'
+#    environment:
+#      GITLAB_OMNIBUS_CONFIG: |
+#        external_url 'https://gitlab.example.com'
+#        # Add any other gitlab.rb configuration here, each on its own line
+#    ports:
+#      - '1080:80'
+#      - '10443:443'
+#      - '1022:22'
+#    volumes:
+#      - '../volumes/gitlab/config:/etc/gitlab'
+#      - '../volumes/gitlab/logs:/var/log/gitlab'
+#      - '../volumes/gitlab/data:/var/opt/gitlab'
   platoon-jenkins:
     build: ./platoon-jenkins
     #restart: always
@@ -20,48 +58,13 @@ services:
       - "122:22"
     volumes:
       - ../volumes/jenkins:/var/lib/jenkins/
-    depends_on:
-      - platoon-artifactory
-      - platoon-sonar
+#    depends_on:
+#      - platoon-artifactory
+#      - platoon-sonar
+#      - platoon-gitlab
     environment:
       - ARTIFACTORY_PORT=8081
       - SONAR_PORT=9000
       - SONAR_DB_PORT=5432
-  platoon-sonardb:
-    #restart: always
-    image: postgres:9.6
-    ports:
-      - "5432:5432"
-    volumes:
-      - ../volumes/sonar/data:/var/lib/postgresql/data
-    environment:
-     - POSTGRES_USER=sonar
-     - POSTGRES_PASSWORD=sonar
-  platoon-sonar:
-    #restart: always
-    image: sonarqube
-    ports:
-     - "19000:9000"
-     - "19092:9092"
-    depends_on:
-      - platoon-sonardb
-    environment:
-     - SONARQUBE_JDBC_URL=jdbc:postgresql://sonardb:5432/sonar
-     - SONARQUBE_JDBC_USERNAME=sonar
-     - SONARQUBE_JDBC_PASSWORD=sonar
-  platoon-gitlab:
-    image: 'gitlab/gitlab-ce:latest'
-    restart: always
-    hostname: 'gitlab.example.com'
-    environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        external_url 'https://gitlab.example.com'
-        # Add any other gitlab.rb configuration here, each on its own line
-    ports:
-      - '1080:80'
-      - '10443:443'
-      - '1022:22'
-    volumes:
-      - '../volumes/gitlab/config:/etc/gitlab'
-      - '../volumes/gitlab/logs:/var/log/gitlab'
-      - '../volumes/gitlab/data:/var/opt/gitlab'
+      - JENKINS_UC=https://updates.jenkins.io
+      - JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental

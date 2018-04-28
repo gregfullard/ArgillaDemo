@@ -54,7 +54,7 @@ RUN chown platoon:platoon /opt/platoon
 WORKDIR /home/platoon
 
 # Copy the readme file into the image
-COPY readme.txt /home/platoon/readme.txt
+COPY platoon-centos-readme.txt /home/platoon/platoon-centos-readme.txt
 
 # Write out the contents of the home folder and wrap up
 RUN ls

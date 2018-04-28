@@ -37,7 +37,7 @@ Docker
 
 Docker-Compose
 
-## Starting up the environment
+## First Run
 First ensure that you have credentials for Docker Hub
 
 ```
@@ -46,12 +46,38 @@ docker login
 docker-compose up
 ```
 
+Take note that a number of manual steps are still needed on the first run to get everything
+up and running for a full demonstration (I'll hopefully automate these over time)
+
+* Jenkins
+     * Open home page and enter the security key
+     * Configure the admin user
+     * Install default plugins
+     * Install Blue Ocean plugin
+     * Install GitLab plugin
+
+## Kill'em all
+If you want to totally remove all containers from yur machine:
+
+```
+docker-compose down
+```
+
+## Using the environment (Preparing for a demo)
+After the initial run (and manual steps performed), you can start and stop the environment using these commands
+
+```
+docker-compose start
+```
+
+```
+docker-compose stop
+```
+
 ## Tools
-| *Tool* | *Link* | *Credentials* |
-| ------------- | ------------- | ------------- |
-| Jenkins | http://${docker-machine ip default}:18080/ | no login required |
-| SonarQube | http://${docker-machine ip default}:19000/ | admin/admin |
-| Artifactory | http://${docker-machine ip default}:8081/artifactory |
-
-
-## Preparing for a demo
+| *Tool*        | *Link*                             | *Credentials*         |
+| ------------- | ---------------------------------- | --------------------- |
+| Jenkins       | http://localhost:18080/            | admin/admin           |
+| GitLab        | TODO                               | TODO                  |
+| SonarQube     | http://localhost:19000/            | admin/admin           |
+| Artifactory   | http://localhost:8081/artifactory  |                       |
