@@ -2,7 +2,7 @@
 A demonstration project to show the various components of the Argilla Framework working together.
 The demonstrations is designed to be useful for large audience presentations.
 
-For full details of the Argilla Framework please refer to the Argilla Repository
+For full details of the Argilla Framework please refer to https://github.com/gregfullard/ArgillaFramework
 
 Components in the stack:
 * GitLab SCM Server
@@ -61,6 +61,7 @@ up and running for a full demonstration (I'll hopefully automate these over time
 * Artifactory
      * Open Home page
      * Configure admin user
+     * Set up repositories
 
 ## Kill'em all
 If you want to totally remove all containers from yur machine:
