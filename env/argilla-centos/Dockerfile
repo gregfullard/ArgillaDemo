@@ -41,20 +41,18 @@ RUN yum clean all
 # The user ID 1000 is the default for the first "regular" user on Fedora/RHEL,
 # so there is a high chance that this ID will be equal to the current user
 # making it easier to use volumes (no permission issues)
-#RUN groupadd -r platoon -g 1000 && useradd -u 1000 -r -g platoon -m -d /opt/platoon -s /bin/bash -c "Platoon user" platoon && \
-#    chmod 755 /opt/platoon
-RUN groupadd -r platoon -g 1000 && useradd -u 1000 -r -g platoon -m -s /bin/bash -c "Platoon user" platoon
+RUN groupadd -r argilla -g 1000 && useradd -u 1000 -r -g argilla -m -s /bin/bash -c "Argilla user" argilla
 
-# Create the /opt/platoon folder in which most software should be installed
-RUN mkdir /opt/platoon
-RUN chmod 755 /opt/platoon
-RUN chown platoon:platoon /opt/platoon
+# Create the /opt/argilla folder in which most software should be installed
+RUN mkdir /opt/argilla
+RUN chmod 755 /opt/argilla
+RUN chown argilla:argilla /opt/argilla
 
 # Set the working directory
-WORKDIR /home/platoon
+WORKDIR /home/argilla
 
 # Copy the readme file into the image
-COPY platoon-centos-readme.txt /home/platoon/platoon-centos-readme.txt
+COPY argilla-centos-readme.txt /home/argilla/argilla-centos-readme.txt
 
 # Write out the contents of the home folder and wrap up
 RUN ls

@@ -1,4 +1,4 @@
-FROM platoon-centos
+FROM argilla-centos
 MAINTAINER Greg Fullard
 USER root
 
@@ -6,4 +6,4 @@ USER root
 RUN yum install -y java
 
 # Copy the readme file into the image
-COPY platoon-openjdk-readme.txt /home/platoon/platoon-openjdk-readme.txt
+COPY argilla-openjdk-readme.txt /home/argilla/argilla-openjdk-readme.txt

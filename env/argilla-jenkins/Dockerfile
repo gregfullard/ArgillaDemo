@@ -1,7 +1,7 @@
 # Looked at:
 # - https://stelligent.com/2017/04/13/containerizing-jenkins-with-docker-and-centos/
 # - https://github.com/internavenue/docker-centos-jenkins
-FROM platoon-openjdk
+FROM argilla-openjdk
 MAINTAINER Greg Fullard
 USER root
 
@@ -27,12 +27,12 @@ ENV JENKINS_UC=https://updates.jenkins.io
 ENV JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental
 
 # Not sure why we're using this
-RUN chown -c platoon /var/lib/jenkins
+RUN chown -c argilla /var/lib/jenkins
 
-USER platoon
+USER argilla
 
 # Copy the readme file into the image
-COPY platoon-jenkins-readme.txt /home/platoon/platoon-jenkins-readme.txt
+COPY argilla-jenkins-readme.txt /home/argilla/argilla-jenkins-readme.txt
 
 # Expose the ports we're interested in
 EXPOSE 8080 22
