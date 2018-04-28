@@ -10,6 +10,15 @@ RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenki
 RUN rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 RUN yum install -y jenkins
 
+# Install Maven
+# TODO
+
+# Install Sphinx
+# TODO
+
+# Install Latex
+# TODO
+
 # Clean up YUM when done.
 RUN yum clean all
 
