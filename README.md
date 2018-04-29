@@ -67,7 +67,7 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Change root password
 * GitLab SSH connection with localhost
      * On local Linux host
-     * cat /home/argilla/.ssh/id_rsa.pub
+     * cat ~/.ssh/id_rsa.pub
      * Copy the file content
      * Open GitLab
          * Settings > SSH Keys
@@ -88,7 +88,7 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Push this project to GitLab server
 
 ```
-git remote add gitlab http://localhost:1080/root/ArgillaDemo.git
+git remote add gitlab ssh://git@localhost:1022/root/ArgillaDemo.git
 git push -u gitlab --all
 git push -u gitlab --tags
 ```

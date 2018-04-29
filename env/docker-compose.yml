@@ -40,7 +40,7 @@ services:
     #image: 'gitlab/gitlab-ce:latest'
     build: ./argilla-gitlab
     restart: always
-    #hostname: 'gitlab.softwarehippie.com'
+    hostname: 'argilla-gitlab'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         # external_url 'https://gitlab.softwarehippie.com:8443'
