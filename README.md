@@ -67,11 +67,12 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Change root password
      * Create empty repository
      * Push this project to GitLab server
-     ```
+```
      git remote add gitlab http://localhost:1080/root/ArgillaDemo.git
      git push -u gitlab --all
      git push -u gitlab --tags
-     ```
+```
+
  * Jenkins-Gitlab integration
      * Ref: https://docs.gitlab.com/ee/integration/jenkins.html
 
