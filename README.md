@@ -99,12 +99,13 @@ git push -u gitlab --tags
          * Settings > Access Tokens
          * Personal Access Tokens
          * Name = Jenkins
+         * Type = api
          * Create and Copy
      * Jenkins
          * Manage Jenkins > Configure System > GitLab
          * Connection Name = GitLab
          * GitLab Host URL = http://argilla-gitlab:80
-         * Credentials > Add > GitLab Api key
+         * Credentials > Add > GitLab Api key (ID = GitLab)
          * Test Connection
          * Save
 

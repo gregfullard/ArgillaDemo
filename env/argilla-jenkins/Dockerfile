@@ -9,15 +9,22 @@ USER root
 RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 RUN rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 RUN yum install -y jenkins
-#RUN yum install -y openssh-server
+
+# Install SSH Clients for interaction with GitLab
 RUN yum install -y openssh-clients
-#RUN yum install -y xclip
+
+# Install Git
+RUN yum install -y git
+
+# Install Sphinx
+RUN yum install -y epel-release
+RUN yum install -y python-pip
+RUN pip install --upgrade pip
+RUN pip install -U Sphinx
+RUN pip install sphinx_rtd_theme
 
 # Install Maven
 RUN yum install -y maven
-
-# Install Sphinx
-# TODO
 
 # Install Latex
 # TODO
