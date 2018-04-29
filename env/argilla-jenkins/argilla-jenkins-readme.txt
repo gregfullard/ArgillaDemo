@@ -8,6 +8,8 @@ docker run -i -P --name jenkins argilla-jenkins
 
 Then you can connect to the container using:
 docker exec -it jenkins bash
+or (when running from docker-compose)
+docker exec -it env_argilla-jenkins_1 bash
 
 Take note that there are a number of configurations and settings that are performed after the creation
 of the container. These are currently done manually, but must be automated with an ansible script

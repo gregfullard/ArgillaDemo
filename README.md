@@ -58,7 +58,6 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Install default plugins
      * Install Blue Ocean plugin
      * Install GitLab plugin
-     * Configure Jenkins-GitLab integration (https://docs.gitlab.com/ee/integration/jenkins.html)
 * Artifactory
      * Open Home page
      * Configure admin user
@@ -68,6 +67,14 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Change root password
      * Create empty repository
      * Push this project to GitLab server
+     ```
+     git remote add gitlab http://localhost:1080/root/ArgillaDemo.git
+     git push -u gitlab --all
+     git push -u gitlab --tags
+     ```
+ * Jenkins-Gitlab integration
+     * Ref: https://docs.gitlab.com/ee/integration/jenkins.html
+
 
 ## Kill'em all
 If you want to totally remove all containers from yur machine:
