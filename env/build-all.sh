@@ -14,6 +14,10 @@ cd argilla-openjdk
 docker build -t argilla-openjdk .
 cd ..
 
+cd argilla-artifactory
+docker build -t argilla-artifactory .
+cd ..
+
 cd argilla-jenkins
 docker build -t argilla-jenkins .
 cd ..

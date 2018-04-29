@@ -58,10 +58,16 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Install default plugins
      * Install Blue Ocean plugin
      * Install GitLab plugin
+     * Configure Jenkins-GitLab integration (https://docs.gitlab.com/ee/integration/jenkins.html)
 * Artifactory
      * Open Home page
      * Configure admin user
      * Set up repositories
+* GitLab
+     * Open Home Page
+     * Change root password
+     * Create empty repository
+     * Push this project to GitLab server
 
 ## Kill'em all
 If you want to totally remove all containers from yur machine:
@@ -85,6 +91,6 @@ docker-compose stop
 | *Tool*        | *Link*                             | *Credentials*         |
 | ------------- | ---------------------------------- | --------------------- |
 | Jenkins       | http://localhost:18080/            | admin/admin           |
-| GitLab        | TODO                               | TODO                  |
+| GitLab        | http://localhost:1080/             | root/???       |
 | SonarQube     | http://localhost:19000/            | admin/admin           |
 | Artifactory   | http://localhost:8081/artifactory  |                       |

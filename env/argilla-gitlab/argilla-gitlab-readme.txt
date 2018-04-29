@@ -1,4 +1,4 @@
-The image is based on argilla-centos
+The image is based on gitlab/gitlab-ce:latest
 
 Build this image on your machine with the following command:
 docker build -t argilla-gitlab .
