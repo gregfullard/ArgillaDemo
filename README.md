@@ -108,6 +108,11 @@ git push -u gitlab --tags
          * Credentials > Add > GitLab Api key (ID = GitLab)
          * Test Connection
          * Save
+* Jenkins Pipeline
+    * Open Jenkinc Blue Ocean interface
+    * New Pipeline
+    * ssh://git@argilla-gitlab/root/ArgillaDemo.git
+    *
 
 
 ## Kill'em all

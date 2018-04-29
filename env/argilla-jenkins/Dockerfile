@@ -23,6 +23,9 @@ RUN pip install --upgrade pip
 RUN pip install -U Sphinx
 RUN pip install sphinx_rtd_theme
 
+# Install Make
+RUN yum install -y make
+
 # Install Maven
 RUN yum install -y maven
 
