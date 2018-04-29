@@ -8,7 +8,7 @@ pipeline {
     }
     stage('sphinx-docs-html') {
       steps {
-        sh 'sphinx-build -b html docs/source /var/www/html/documentation'
+        sh 'sphinx-build -b html docs/developer_manual/source /var/www/html/documentation'
       }
     }
     stage('SayGoodbye') {
