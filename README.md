@@ -52,30 +52,61 @@ docker-compose up
 Take note that a number of manual steps are still needed on the first run to get everything
 up and running for a full demonstration (I'll hopefully automate these over time)
 
-* Jenkins
+* Jenkins Basics
      * Open home page and enter the security key
      * Configure the admin user
      * Install default plugins
      * Install Blue Ocean plugin
      * Install GitLab plugin
-* Artifactory
+* Artifactory Basics
      * Open Home page
      * Configure admin user
      * Set up repositories
-* GitLab
+* GitLab Basics
      * Open Home Page
      * Change root password
+* GitLab SSH connection with localhost
+     * On local Linux host
+     * cat /home/argilla/.ssh/id_rsa.pub
+     * Copy the file content
+     * Open GitLab
+         * Settings > SSH Keys
+         * Paste Keys
+         * Save
+* GitLab SSH connection with Jenkins host
+     * On local Linux host
+     * docker exec -it env_argilla-jenkins_1 bash
+     * Inside jenkins shell
+     * cat /home/argilla/.ssh/id_rsa.pub
+     * Copy the file content
+     * Open GitLab
+         * Settings > SSH Keys
+         * Paste Keys
+         * Save     
+* GitLab Prepare Repo  
      * Create empty repository
      * Push this project to GitLab server
-     
+
 ```
 git remote add gitlab http://localhost:1080/root/ArgillaDemo.git
 git push -u gitlab --all
 git push -u gitlab --tags
 ```
 
- * Jenkins-Gitlab integration
+* Jenkins-Gitlab integration
      * Ref: https://docs.gitlab.com/ee/integration/jenkins.html
+     * Get API Key from GitLab
+         * Settings > Access Tokens
+         * Personal Access Tokens
+         * Name = Jenkins
+         * Create and Copy
+     * Jenkins
+         * Manage Jenkins > Configure System > GitLab
+         * Connection Name = GitLab
+         * GitLab Host URL = http://argilla-gitlab:80
+         * Credentials > Add > GitLab Api key
+         * Test Connection
+         * Save
 
 
 ## Kill'em all
