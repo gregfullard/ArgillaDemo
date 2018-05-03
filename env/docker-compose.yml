@@ -36,38 +36,45 @@ services:
 #     - SONARQUBE_JDBC_URL=jdbc:postgresql://sonardb:5432/sonar
 #     - SONARQUBE_JDBC_USERNAME=sonar
 #     - SONARQUBE_JDBC_PASSWORD=sonar
-  argilla-gitlab:
-    #image: 'gitlab/gitlab-ce:latest'
-    build: ./argilla-gitlab
+#  argilla-gitlab:
+#    #image: 'gitlab/gitlab-ce:latest'
+#    build: ./argilla-gitlab
+#    restart: always
+#    hostname: 'argilla-gitlab'
+#    environment:
+#      GITLAB_OMNIBUS_CONFIG: |
+#        # external_url 'https://gitlab.softwarehippie.com:8443'
+#        # Add any other gitlab.rb configuration here, each on its own line
+#    ports:
+#      - '1080:80'
+#      - '10443:443'
+#      - '1022:22'
+#    volumes:
+#      - '../volumes/gitlab/config:/etc/gitlab'
+#      - '../volumes/gitlab/logs:/var/log/gitlab'
+#      - '../volumes/gitlab/data:/var/opt/gitlab'
+#  argilla-jenkins:
+#    build: ./argilla-jenkins
+#    #restart: always
+#    ports:
+#      - "18080:8080"
+#      - "122:22"
+#    volumes:
+#      - ../volumes/jenkins:/var/lib/jenkins/
+#    depends_on:
+##      - argilla-artifactory
+##      - argilla-sonar
+#      - argilla-gitlab
+#    environment:
+#      - ARTIFACTORY_PORT=8081
+#      - SONAR_PORT=9000
+#      - SONAR_DB_PORT=5432
+#      - JENKINS_UC=https://updates.jenkins.io
+#      - JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental
+  node-demo-app:
+    build: ./node-demo-app
     restart: always
-    hostname: 'argilla-gitlab'
-    environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        # external_url 'https://gitlab.softwarehippie.com:8443'
-        # Add any other gitlab.rb configuration here, each on its own line
     ports:
-      - '1080:80'
-      - '10443:443'
-      - '1022:22'
+      - "49160:8080"
     volumes:
-      - '../volumes/gitlab/config:/etc/gitlab'
-      - '../volumes/gitlab/logs:/var/log/gitlab'
-      - '../volumes/gitlab/data:/var/opt/gitlab'
-  argilla-jenkins:
-    build: ./argilla-jenkins
-    #restart: always
-    ports:
-      - "18080:8080"
-      - "122:22"
-    volumes:
-      - ../volumes/jenkins:/var/lib/jenkins/
-    depends_on:
-#      - argilla-artifactory
-#      - argilla-sonar
-      - argilla-gitlab
-    environment:
-      - ARTIFACTORY_PORT=8081
-      - SONAR_PORT=9000
-      - SONAR_DB_PORT=5432
-      - JENKINS_UC=https://updates.jenkins.io
-      - JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental
+      - ../volumes/node-demo-app:/usr/src/app
