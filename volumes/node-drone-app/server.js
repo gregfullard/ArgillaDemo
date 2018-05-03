@@ -9,8 +9,13 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-	console.log('Saying hello');
-	res.send('Hello world\n');
+	console.log('Saying hello ');
+
+	var xyz = require("./node_modules/node-bebop/examples/GoDrone");
+
+	console.log(" >> " + xyz.doDrone());
+
+	res.send('Hello world \n');
 });
 
 app.listen(PORT, HOST);
