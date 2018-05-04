@@ -47,7 +47,7 @@ e.g.
     
 or (in headless mode)
 
-    mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dcontext=chrome Dchrome.switches=--headless
+    mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless -Dcontext=chrome
 
 ### For FireFox:
 
