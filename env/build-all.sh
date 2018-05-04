@@ -26,6 +26,18 @@ cd argilla-gitlab
 docker build -t argilla-gitlab .
 cd ..
 
+cd argilla-nginx
+docker build -t argilla-nginx .
+cd ..
+
+cd node-demo-app
+docker build -t node-demo-app .
+cd ..
+
+cd node-drone-app
+docker build -t node-drone-app .
+cd ..
+
 # Get started
 echo '****************'
 echo '**************** Done'

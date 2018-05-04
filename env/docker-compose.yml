@@ -71,17 +71,24 @@ services:
 #      - SONAR_DB_PORT=5432
 #      - JENKINS_UC=https://updates.jenkins.io
 #      - JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental
-#  node-demo-app:
-#    build: ./node-demo-app
-#    restart: always
-#    ports:
-#      - "49160:8080"
-#    volumes:
-#      - ../volumes/node-demo-app:/usr/src/app
-  node-drone-app:
-    build: ./node-drone-app
+  argilla-nginx:
+    build: ./argilla-nginx
+    restart: always
+    ports:
+      - "8090:80"
+    volumes:
+      - ../volumes/nginx:/usr/share/nginx/html  
+  node-demo-app:
+    build: ./node-demo-app
     restart: always
     ports:
       - "49160:8080"
     volumes:
-      - ../volumes/node-drone-app:/usr/src/app
+      - ../volumes/node-demo-app:/usr/src/app
+  node-drone-app:
+    build: ./node-drone-app
+    restart: always
+    ports:
+      - "49161:8080"
+    volumes:
+      - ../volumes/node-drone-app:/usr/src/app    
