@@ -29,6 +29,24 @@ RUN yum install -y make
 # Install Maven
 RUN yum install -y maven
 
+# Install Chrome
+ADD ./google-x86_64.repo /etc/yum.repos.d/external.repo
+RUN yum install -y google-chrome-stable
+
+# Install ChromeDriver
+WORKDIR /home/argilla
+ENV CHROME_DRIVER_VERSION=2.38
+RUN wget http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
+RUN ls
+RUN unzip chromedriver_linux64.zip
+RUN ls
+#RUN rm chromedriver_linux64.zip
+RUN mkdir -p /opt/webdrivers
+RUN mv -f chromedriver /opt/webdrivers/chromedriver
+RUN chmod 755 /opt/webdrivers
+RUN chown argilla:argilla /opt/webdrivers
+RUN ln -s /opt/webdrivers/chromedriver /usr/local/bin/chromedriver
+
 # Install Latex
 # TODO
 
@@ -50,7 +68,7 @@ USER argilla
 RUN ssh-keygen -q -t rsa -C "jenkins@argilla.com" -N '' -f /home/argilla/.ssh/id_rsa  -b 4096
 
 # Copy the readme file into the image
-COPY argilla-jenkins-readme.txt /home/argilla/argilla-jenkins-readme.txt
+COPY argilla-jenkins-readme.md /home/argilla/argilla-jenkins-readme.md
 
 # Expose the ports we're interested in
 EXPOSE 8080 22

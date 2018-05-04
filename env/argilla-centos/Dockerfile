@@ -52,7 +52,7 @@ RUN chown argilla:argilla /opt/argilla
 WORKDIR /home/argilla
 
 # Copy the readme file into the image
-COPY argilla-centos-readme.txt /home/argilla/argilla-centos-readme.txt
+COPY argilla-centos-readme.md /home/argilla/argilla-centos-readme.md
 
 # Write out the contents of the home folder and wrap up
 RUN ls
