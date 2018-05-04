@@ -30,22 +30,22 @@ RUN yum install -y make
 RUN yum install -y maven
 
 # Install Chrome
-ADD ./google-x86_64.repo /etc/yum.repos.d/external.repo
-RUN yum install -y google-chrome-stable
+#ADD ./google-x86_64.repo /etc/yum.repos.d/external.repo
+#RUN yum install -y google-chrome-stable
 
 # Install ChromeDriver
-WORKDIR /home/argilla
-ENV CHROME_DRIVER_VERSION=2.38
-RUN wget http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
-RUN ls
-RUN unzip chromedriver_linux64.zip
-RUN ls
-#RUN rm chromedriver_linux64.zip
-RUN mkdir -p /opt/webdrivers
-RUN mv -f chromedriver /opt/webdrivers/chromedriver
-RUN chmod 755 /opt/webdrivers
-RUN chown argilla:argilla /opt/webdrivers
-RUN ln -s /opt/webdrivers/chromedriver /usr/local/bin/chromedriver
+#WORKDIR /home/argilla
+#ENV CHROME_DRIVER_VERSION=2.38
+#RUN wget http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
+#RUN ls
+#RUN unzip chromedriver_linux64.zip
+#RUN ls
+##RUN rm chromedriver_linux64.zip
+#RUN mkdir -p /opt/webdrivers
+#RUN mv -f chromedriver /opt/webdrivers/chromedriver
+#RUN chmod 755 /opt/webdrivers
+#RUN chown argilla:argilla /opt/webdrivers
+#RUN ln -s /opt/webdrivers/chromedriver /usr/local/bin/chromedriver
 
 # Install Latex
 # TODO

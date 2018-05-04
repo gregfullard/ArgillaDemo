@@ -83,7 +83,7 @@ up and running for a full demonstration (I'll hopefully automate these over time
          * Settings > SSH Keys
          * Paste Keys
          * Save     
-* GitLab Prepare Repo  
+* GitLab Prepare Repo
      * Create empty repository
      * Push this project to GitLab server
 
@@ -109,11 +109,15 @@ git push -u gitlab --tags
          * Test Connection
          * Save
 * Jenkins Pipeline
-    * Open Jenkinc Blue Ocean interface
-    * New Pipeline
-    * ssh://git@argilla-gitlab/root/ArgillaDemo.git
-    *
-
+     * Open Jenkinc Blue Ocean interface
+     * New Pipeline
+     * ssh://git@argilla-gitlab/root/ArgillaDemo.git
+     * Copy the SSH key as provided by Jenkins
+     * Open GitLab
+         * Settings > SSH Keys
+         * Paste Keys
+         * Save
+     * (Back in Jenkins) Create Pipeline
 
 ## Kill'em all
 If you want to totally remove all containers from yur machine:
