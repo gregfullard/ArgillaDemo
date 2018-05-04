@@ -13,6 +13,9 @@ volumes/gitlab/data
 volumes/gitlab/log
 volumes/sonar/data
 
+# BDD Project Target folder
+testing/bdd/bdd-demo/target
+
 # Generated Docs
 docs/developer_manual/build
 docs/user_manual/build
