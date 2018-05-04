@@ -134,9 +134,12 @@ docker-compose stop
 ```
 
 ## Tools
-| *Tool*        | *Link*                             | *Credentials*         |
-| ------------- | ---------------------------------- | --------------------- |
-| Jenkins       | http://localhost:18080/            | admin/admin           |
-| GitLab        | http://localhost:1080/             | root/???       |
-| SonarQube     | http://localhost:19000/            | admin/admin           |
-| Artifactory   | http://localhost:8081/artifactory  |                       |
+| *Tool*          | *Link*                             | *Credentials*         |
+| --------------- | ---------------------------------- | --------------------- |
+| Jenkins         | http://localhost:18080/            | admin/admin           |
+| GitLab          | http://localhost:1080/             | root/???       |
+| SonarQube       | http://localhost:19000/            | admin/admin           |
+| Artifactory     | http://localhost:8081/artifactory  |                       |
+| Node Demo App   | http://localhost:49160             |                       |
+| Node Drone App  | http://localhost:49161             |                       |
+| NGINX           | http://localhost:8090              |                       |

@@ -62,6 +62,11 @@ RUN chown -c argilla /var/lib/jenkins
 
 USER argilla
 
+# Add folders for app deployments
+RUN mkdir -p /home/argilla/demo/node-demo-app
+RUN mkdir -p /home/argilla/demo/node-drone-app
+RUN mkdir -p /home/argilla/demo/nginx
+
 # Generate SSH Keypair in the Jenkins container
 # NOTE: This is for demo purposes only. Normally you shouldn't store key files inside the container
 #RUN ssh-keygen -q -t rsa -N '' -f /id_rsa

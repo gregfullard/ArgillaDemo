@@ -18,3 +18,5 @@ of the container. These are currently done manually, but must be automated with 
  - Install default plugins
  - Install Blue Ocean plugin
  - Install GitLab plugin
+ 
+Look at: https://github.com/alexgalkin/run-serenity-scripts/blob/master/Dockerfile
