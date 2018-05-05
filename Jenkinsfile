@@ -13,8 +13,17 @@ pipeline {
       }
     }
     stage('Deploy Node Demo App') {
-      steps {
-        sh 'cp src/node/node-demo-app/server.js /home/argilla/demo/node-demo-app/server.js'
+      parallel {
+        stage('Deploy Node Demo App') {
+          steps {
+            sh 'cp src/node/node-demo-app/server.js /home/argilla/demo/node-demo-app/server.js'
+          }
+        }
+        stage('Deploy Node Drone App') {
+          steps {
+            sleep 1
+          }
+        }
       }
     }
     stage('Finish') {
