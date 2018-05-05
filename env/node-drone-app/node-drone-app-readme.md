@@ -5,6 +5,8 @@ docker build -t node-drone-app .
 
 Create a container from this image with:
 docker run -p 49160:8080 -d --name node node-drone-app
+or with volumes
+docker run -p 49160:8080 -i --name node -v /home/gregf/Repos/GregFullard/ArgillaDemo/volumes/node-drone-app:/usr/src/app  node-drone-app
 
 Then you can connect to the container using:
 docker exec -it drone bash
