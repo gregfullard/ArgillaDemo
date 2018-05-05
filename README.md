@@ -131,10 +131,12 @@ git push -u gitlab --tags
      * (Back in Jenkins) Create Pipeline
 
 ## Kill'em all
-If you want to totally remove all containers from yur machine:
+If you want to totally remove all containers from your machine:
 
 ```
 docker-compose down
+cd env
+./clean.sh
 ```
 
 ## Using the environment (Preparing for a demo)

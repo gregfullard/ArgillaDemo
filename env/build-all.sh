@@ -95,7 +95,7 @@ cd node-drone-app
 docker build -t node-drone-app .
 cd ..
 
-# Get started
+# Done
 echo '****************'
 echo '**************** Done'
 echo '****************'
