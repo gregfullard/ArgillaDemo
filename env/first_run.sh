@@ -23,7 +23,7 @@ cd ../../../env
 # Build all docker images
 # =======================
 docker login
-./build-all
+./build-all.sh
 docker-compose build
 
 # Done
