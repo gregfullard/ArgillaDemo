@@ -58,7 +58,15 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Configure the admin user
      * Install default plugins
      * Install Blue Ocean plugin
+         * Manage Jenkins > Manage Plugins > Available 
+         * Type "Blue Ocean"
+         * Select the plugin
+         * Click "Install without Restart"
      * Install GitLab plugin
+         * Manage Jenkins > Manage Plugins > Available 
+         * Type "GitLab"
+         * Select the plugin
+         * Click "Install without Restart"
 * Artifactory Basics
      * Open Home page
      * Configure admin user
