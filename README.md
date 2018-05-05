@@ -151,7 +151,7 @@ docker-compose stop
 | *App*            | *Link*                                                | *Credentials*         |
 | ---------------- | ----------------------------------------------------- | --------------------- |
 | Node Demo App    | http://localhost:49160                                |                       |
-| Node Drone App   | http://localhost:49161                                |                       |
+| Fly Drone        | http://localhost:49161                                |                       |
 | NGINX            | http://localhost:8090/argilla                         |                       |
 | Developer Manual | http://localhost:8090/dev-manual/html/index.html      |                       |
 
