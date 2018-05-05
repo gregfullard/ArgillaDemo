@@ -45,16 +45,8 @@ npm
 First ensure that you have credentials for Docker Hub
 
 ```
-cd src/node/node-demo-app
-npm install
-sudo npm install -g supervisor nodemon
-cd src/node/node-drone-app
-npm install
-sudo npm install -g supervisor nodemon
-cd ../../../env
-docker login
-./build-all
-docker-compose build
+cd env
+./first_run.sh
 docker-compose up
 ```
 
