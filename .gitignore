@@ -23,6 +23,18 @@ volumes/node-drone-app/package-lock.json
 volumes/node-drone-app/package.json
 volumes/node-drone-app/server.js
 
+# Node files in the env/node-demo-app docker folder (They are copied using a shell script)
+env/node-demo-app/node_modules
+env/node-demo-app/package-lock.json
+env/node-demo-app/package.json
+env/node-demo-app/server.js
+
+# Node files in the env/node-drone-app docker folder (They are copied using a shell script)
+env/node-drone-app/node_modules
+env/node-drone-app/package-lock.json
+env/node-drone-app/package.json
+env/node-drone-app/server.js
+
 # BDD Project Target folder
 testing/bdd/bdd-demo/target
 
