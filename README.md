@@ -164,5 +164,14 @@ docker-compose stop
 | NGINX            | http://localhost:8090/argilla                         |                       |
 | Developer Manual | http://localhost:8090/dev-manual/html/index.html      |                       |
 
+## Notes
 
+If the local host machine can't connect to the drone, it is likely due the the existence of a virtual bridge network
+ith the same IP (192.168.42.1). You can double-check by running ifconfig
+
+To kill this bridge, run:
+
+```
+sudo ifconfig virbr1 down
+```
 
