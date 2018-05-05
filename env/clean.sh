@@ -40,6 +40,11 @@ cd nginx
 rm -rf dev-manual
 rm -rf user-manual
 
+# Remove Git Remote
+# =================
+cd ../..
+git remote remove gitlab
+
 # Get Done
 echo '****************'
 echo '**************** Done'

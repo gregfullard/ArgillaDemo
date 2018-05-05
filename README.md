@@ -102,6 +102,7 @@ git remote add gitlab ssh://git@localhost:1022/root/ArgillaDemo.git
 git push -u gitlab --all
 git push -u gitlab --tags
 ```
+     * (If this is a second run and you get an SSH issue, simply remove the existing known host with the command provided by your OS
 
 * Jenkins-Gitlab integration
      * Ref: https://docs.gitlab.com/ee/integration/jenkins.html
