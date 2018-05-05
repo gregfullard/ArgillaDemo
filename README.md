@@ -66,6 +66,7 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Open Home Page
      * Change root password
 * GitLab SSH connection with localhost
+     * Ref: https://docs.bitnami.com/aws/how-to/create-ci-pipeline/
      * On local Linux host
      * cat ~/.ssh/id_rsa.pub
      * Copy the file content
@@ -95,6 +96,7 @@ git push -u gitlab --tags
 
 * Jenkins-Gitlab integration
      * Ref: https://docs.gitlab.com/ee/integration/jenkins.html
+     * Ref: https://github.com/jenkinsci/gitlab-plugin#job-trigger-configuration
      * Get API Key from GitLab
          * Settings > Access Tokens
          * Personal Access Tokens
@@ -152,5 +154,6 @@ docker-compose stop
 | Node Drone App   | http://localhost:49161                                |                       |
 | NGINX            | http://localhost:8090/argilla                         |                       |
 | Developer Manual | http://localhost:8090/dev-manual/html/index.html      |                       |
+
 
 
