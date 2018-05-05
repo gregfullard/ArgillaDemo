@@ -50,5 +50,12 @@ mkdir -p /home/argilla/demo/nginx/user-manual
 cp -R docs/developer_manual/build/html /home/argilla/demo/nginx/dev-manual'''
       }
     }
+    stage('Launch Drone') {
+      steps {
+        sleep 1
+        echo 'Drone Launched'
+        sh 'curl -i http://node-drone-app:8080'
+      }
+    }
   }
 }
