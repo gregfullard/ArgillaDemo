@@ -14,6 +14,7 @@ Open a terminal in the folder, the run:
 ```
 npm install
 sudo npm install -g supervisor nodemon
+npm install node-bebop
 ```
 
 Once the app is installed, you can start it up by calling

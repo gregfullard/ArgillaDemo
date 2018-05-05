@@ -37,14 +37,21 @@ The Pipeline will include:
 
 ## Prerequisites
 Docker
-
 Docker-Compose
+nodejs
+npm
 
 ## First Run
 First ensure that you have credentials for Docker Hub
 
 ```
-cd env
+cd src/node/node-demo-app
+npm install
+sudo npm install -g supervisor nodemon
+cd src/node/node-drone-app
+npm install
+sudo npm install -g supervisor nodemon
+cd ../../../env
 docker login
 ./build-all
 docker-compose build
