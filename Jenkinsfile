@@ -26,6 +26,9 @@ pipeline {
         stage('Deploy Node Drone App') {
           steps {
             sleep 1
+            sh 'cp src/node/node-drone-app/server.js /home/argilla/demo/node-drone-app/server.js'
+            sh 'cp src/node/node-drone-app/node_modules/node-bebop/examples/GoDrone.js /home/argilla/demo/node-drone-app/node_modules/node-bebop/examples/GoDrone.js'
+            echo 'Deploying Node Drone App'
           }
         }
       }
