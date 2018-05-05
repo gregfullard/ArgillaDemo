@@ -46,6 +46,8 @@ First ensure that you have credentials for Docker Hub
 ```
 cd env
 docker login
+./build-all
+docker-compose build
 docker-compose up
 ```
 

@@ -4,7 +4,9 @@ Build this image on your machine with the following command:
 docker build -t node-demo-app .
 
 Create a container from this image with:
-docker run -p 49160:8080 -d --name node node-demo-app
+docker run -p 49160:8080 -i --name node node-demo-app
+or with volumes
+docker run -p 49160:8080 -i --name node -v /home/gregf/Repos/GregFullard/ArgillaDemo/volumes/node-demo-app:/usr/src/app  node-demo-app
 
 Then you can connect to the container using:
 docker exec -it node bash
