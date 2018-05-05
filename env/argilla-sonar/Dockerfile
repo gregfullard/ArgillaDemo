@@ -6,6 +6,10 @@ FROM centos:7
 
 MAINTAINER Marcel Birkner <marcel.birkner@codecentric.de>
 
+# Update Timezone
+ENV TZ=Africa/Johannesburg
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 ENV JAVA_OPTS "$JAVA_OPTS -Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin"
 
 # Set the JAVA_HOME variable to make it clear where Java is located

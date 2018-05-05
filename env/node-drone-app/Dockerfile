@@ -1,6 +1,10 @@
 FROM node:carbon
 MAINTAINER Greg Fullard
 
+# Update Timezone
+ENV TZ=Africa/Johannesburg
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Define location for app - This should NOT be changed
 ENV APP_HOME /usr/src/app
 

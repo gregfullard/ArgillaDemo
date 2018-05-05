@@ -2,6 +2,10 @@ FROM centos:7
 MAINTAINER Greg Fullard
 USER root
 
+# Update Timezone
+ENV TZ=Africa/Johannesburg
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Update the system
 RUN yum update -y
 RUN yum upgrade -y

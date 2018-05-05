@@ -5,6 +5,10 @@ FROM argilla-openjdk
 MAINTAINER Greg Fullard
 USER root
 
+# Update Timezone
+ENV TZ=Africa/Johannesburg
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Install jenkins
 RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 RUN rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
