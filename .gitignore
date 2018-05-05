@@ -12,6 +12,10 @@ volumes/gitlab/config
 volumes/gitlab/data
 volumes/gitlab/log
 volumes/sonar/data
+volumes/nginx/dev-manual
+volumes/nginx/user-manual
+volumes/node-demo-app/server.js
+volumes/node-drone-app/server.js
 
 # BDD Project Target folder
 testing/bdd/bdd-demo/target

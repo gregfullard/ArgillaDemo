@@ -66,6 +66,8 @@ USER argilla
 RUN mkdir -p /home/argilla/demo/node-demo-app
 RUN mkdir -p /home/argilla/demo/node-drone-app
 RUN mkdir -p /home/argilla/demo/nginx
+RUN mkdir -p /home/argilla/demo/nginx/dev-manual
+RUN mkdir -p /home/argilla/demo/nginx/user-manual
 
 # Generate SSH Keypair in the Jenkins container
 # NOTE: This is for demo purposes only. Normally you shouldn't store key files inside the container

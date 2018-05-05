@@ -138,12 +138,19 @@ docker-compose stop
 ```
 
 ## Tools
-| *Tool*          | *Link*                             | *Credentials*         |
-| --------------- | ---------------------------------- | --------------------- |
-| Jenkins         | http://localhost:18080/            | admin/admin           |
-| GitLab          | http://localhost:1080/             | root/???       |
-| SonarQube       | http://localhost:19000/            | admin/admin           |
-| Artifactory     | http://localhost:8081/artifactory  |                       |
-| Node Demo App   | http://localhost:49160             |                       |
-| Node Drone App  | http://localhost:49161             |                       |
-| NGINX           | http://localhost:8090              |                       |
+| *Tool*           | *Link*                                                | *Credentials*         |
+| ---------------- | ----------------------------------------------------- | --------------------- |
+| Jenkins          | http://localhost:18080/                               | admin/admin           |
+| GitLab           | http://localhost:1080/                                | root/???              |
+| SonarQube        | http://localhost:19000/                               | admin/admin           |
+| Artifactory      | http://localhost:8081/artifactory                     |                       |
+
+## URLs of deployed Apps
+| *App*            | *Link*                                                | *Credentials*         |
+| ---------------- | ----------------------------------------------------- | --------------------- |
+| Node Demo App    | http://localhost:49160                                |                       |
+| Node Drone App   | http://localhost:49161                                |                       |
+| NGINX            | http://localhost:8090/argilla                         |                       |
+| Developer Manual | http://localhost:8090/dev-manual/html/index.html      |                       |
+
+
