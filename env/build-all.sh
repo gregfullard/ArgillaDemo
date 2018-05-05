@@ -6,30 +6,46 @@ echo '****************'
 echo '**************** This script builds all docker images'
 echo '****************'
 
+# Centos Base Image
+# =================
 cd argilla-centos
 docker build -t argilla-centos .
 cd ..
 
+# OpenJDK Base Image
+# ==================
 cd argilla-openjdk
 docker build -t argilla-openjdk .
 cd ..
 
+# Artifactory Image
+# =================
 cd argilla-artifactory
 docker build -t argilla-artifactory .
 cd ..
 
+# Jenkins Image
+# =============
 cd argilla-jenkins
 docker build -t argilla-jenkins .
 cd ..
+
+# GitLab Image
+# ============
 
 cd argilla-gitlab
 docker build -t argilla-gitlab .
 cd ..
 
+# NginX Image
+# ===========
+
 cd argilla-nginx
 docker build -t argilla-nginx .
 cd ..
 
+# Node Demo Image
+# ===============
 # Clear the node-demo-app volume
 # Copy all files from the app folder into the volume and into the Docker env folder
 # This ensures that the container runs correctly with or without a mounted volume
@@ -52,6 +68,28 @@ cd ../../../env
 cd node-demo-app
 docker build -t node-demo-app .
 cd ..
+
+# Node Drone Image
+# ==================
+
+# Clear the node-drone-app volume
+# Copy all files from the app folder into the volume and into the Docker env folder
+# This ensures that the container runs correctly with or without a mounted volume
+cd ../volumes/node-drone-app
+rm -rf node_modules
+rm -f package.json
+rm -f package-lock.json
+rm -f server.js
+cd ../../src/node/node-drone-app
+cp package.json ../../../volumes/node-drone-app/package.json
+cp package-lock.json ../../../volumes/node-drone-app/package-lock.json
+cp server.js ../../../volumes/node-drone-app/server.js
+cp -R node_modules ../../../volumes/node-drone-app/
+cp package.json ../../../env/node-drone-app/package.json
+cp package-lock.json ../../../env/node-drone-app/package-lock.json
+cp server.js ../../../env/node-drone-app/server.js
+cp -R node_modules ../../../env/node-drone-app/
+cd ../../../env
 
 cd node-drone-app
 docker build -t node-drone-app .

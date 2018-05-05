@@ -1,6 +1,8 @@
-This is a demonstration application for NodeJS
+This is a Drone demonstration  application for NodeJS
 
-It starts up a simple server running a Hello world HTTP service
+It starts up a simple server running an HTTP service that launches the drone
+
+Note: For basics safety purposes, the call to actually launch the drone is commented out as a default
 
 # Prerequisites
 * Node
