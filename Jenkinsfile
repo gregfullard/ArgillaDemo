@@ -44,7 +44,7 @@ make html
         sleep 1
         sh '''mkdir -p /home/argilla/demo/nginx/dev-manual
 mkdir -p /home/argilla/demo/nginx/user-manual
-cp docs/developer_manual/build/html /home/argilla/demo/nginx/dev-manual'''
+cp -R docs/developer_manual/build/html /home/argilla/demo/nginx/dev-manual'''
       }
     }
   }
