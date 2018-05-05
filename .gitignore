@@ -18,8 +18,10 @@ volumes/node-demo-app/node_modules
 volumes/node-demo-app/package-lock.json
 volumes/node-demo-app/package.json
 volumes/node-demo-app/server.js
+volumes/node-drone-app/node_modules
+volumes/node-drone-app/package-lock.json
+volumes/node-drone-app/package.json
 volumes/node-drone-app/server.js
-volumes/node-drone-app/node_modules/node-bebop/examples/GoDrone.js
 
 # BDD Project Target folder
 testing/bdd/bdd-demo/target
