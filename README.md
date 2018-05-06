@@ -56,7 +56,7 @@ up and running for a full demonstration (I'll hopefully automate these over time
 
 * Jenkins Basics
      * Open home page and enter the security key
-     * Install suggested plugins     
+     * Install suggested plugins
      * Configure the admin user (admin/admin)
      * Confirm Instance URL
      * Install Blue Ocean plugin
