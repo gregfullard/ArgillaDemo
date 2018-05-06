@@ -193,3 +193,10 @@ To kill this bridge, run:
 ```
 sudo ifconfig virbr1 down
 ```
+
+## TODO
+
+Further improvements that still need to be made for a slick experience:
+ * Improve the Jenkins docker image to have all the required plugins preinstalled
+ * Improve the Jenkins docker image so that Jenkins doesn't require an admin password
+ * Install all the SSH keys vie automated script (Probably using Ansible)
