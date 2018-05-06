@@ -115,7 +115,7 @@ git push -u gitlab --tags
          * Settings > Access Tokens
          * Personal Access Tokens
          * Name = Jenkins
-         * Type = api
+         * Scope = api
          * Create and Copy
      * Jenkins
          * Manage Jenkins > Configure System > GitLab
@@ -127,8 +127,9 @@ git push -u gitlab --tags
 * Jenkins Pipeline
      * Open Jenkinc Blue Ocean interface
      * New Pipeline
-     * ssh://git@argilla-gitlab/root/ArgillaDemo.git
-     * Copy the SSH key as provided by Jenkins
+         * Git
+         * Repository URL: ssh://git@argilla-gitlab/root/ArgillaDemo.git
+         * Copy the SSH key as provided by Jenkins
      * Open GitLab
          * Settings > SSH Keys
          * Paste Keys
@@ -174,12 +175,13 @@ docker-compose stop
 | Artifactory      | http://localhost:8081/artifactory                     |                       |
 
 ## URLs of deployed Apps
-| *App*            | *Link*                                                | *Credentials*         |
-| ---------------- | ----------------------------------------------------- | --------------------- |
-| Node Demo App    | http://localhost:49160                                |                       |
-| Fly Drone        | http://localhost:49161                                |                       |
-| NGINX            | http://localhost:8090/argilla                         |                       |
-| Developer Manual | http://localhost:8090/dev-manual/html/index.html      |                       |
+| *App*            | *Link*                                                 | *Credentials*         |
+| ---------------- | ------------------------------------------------------ | --------------------- |
+| Node Demo App    | http://localhost:49160                                 |                       |
+| Fly Drone        | http://localhost:49161                                 |                       |
+| NGINX            | http://localhost:8090/argilla                          |                       |
+| Developer Manual | http://localhost:8090/dev-manual/html/index.html       |                       |
+| Test Report      | http://localhost:8090/test-reports/serenity/index.html |                       |
 
 ## Notes
 

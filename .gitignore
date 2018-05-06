@@ -14,6 +14,7 @@ volumes/gitlab/log
 volumes/sonar/data
 volumes/nginx/dev-manual
 volumes/nginx/user-manual
+volumes/nginx/test-reports
 volumes/node-demo-app/node_modules
 volumes/node-demo-app/package-lock.json
 volumes/node-demo-app/package.json
