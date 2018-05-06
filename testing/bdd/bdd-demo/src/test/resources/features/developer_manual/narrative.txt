@@ -1,0 +1,4 @@
+Look at Developer Manual
+In order to understand the details of the Drone Demo
+As a developer
+I want to be able to open and read the developer manual online

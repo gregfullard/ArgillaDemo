@@ -10,7 +10,8 @@ Welcome to Demo Developer Documentation's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   getting_started
+   architecture
 
 Indices and tables
 ==================
