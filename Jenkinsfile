@@ -61,8 +61,6 @@ cp -R docs/user_manual/build/html /home/argilla/demo/nginx/user-manual
         echo 'Running BDD Tests'
         sh '''cd testing/bdd/bdd-demo
 mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless,--no-sandbox -Dcontext=chrome'''
-        sh '''mkdir -p /home/argilla/demo/nginx/test-reports
-cp -R testing/bdd/bdd-demo/target/site/serenity /home/argilla/demo/nginx/test-reports'''
       }
     }
     stage('Launch Drone') {
@@ -73,4 +71,10 @@ cp -R testing/bdd/bdd-demo/target/site/serenity /home/argilla/demo/nginx/test-re
       }
     }
   }
+  post {
+    always {
+      sh '''mkdir -p /home/argilla/demo/nginx/test-reports
+cp -R testing/bdd/bdd-demo/target/site/serenity /home/argilla/demo/nginx/test-reports'''
+    }
+}
 }
