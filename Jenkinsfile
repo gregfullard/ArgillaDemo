@@ -38,8 +38,8 @@ pipeline {
         echo 'Generating Developer Manual'
         sleep 1
         sh '''cd docs/developer_manual
-make html
-mkdir -p /home/argilla/demo/nginx/dev-manual
+make html'''
+        sh '''mkdir -p /home/argilla/demo/nginx/dev-manual
 cp -R docs/developer_manual/build/html /home/argilla/demo/nginx/dev-manual
 '''
         echo 'Generating User Manual'
