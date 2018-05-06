@@ -50,10 +50,18 @@ mkdir -p /home/argilla/demo/nginx/user-manual
 cp -R docs/developer_manual/build/html /home/argilla/demo/nginx/dev-manual'''
       }
     }
+    stage('Run BDD Tests') {
+      steps {
+        sleep 1
+        echo 'Running BDD Tests'
+        sh '''cd testing/bdd/bdd-demo
+mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless,--no-sandbox -Dcontext=chrome'''
+      }
+    }
     stage('Launch Drone') {
       steps {
         sleep 1
-        echo 'Drone Launched'
+        echo 'Launching the Drone'
         sh 'curl -i http://node-drone-app:8080'
       }
     }
