@@ -7,6 +7,10 @@ echo '****************'
 echo '**************** Cleaning everything'
 echo '****************'
 
+# Bring Docker Compose Down
+# =========================
+docker-compose down
+
 # Clean Jenkins Volume
 # ====================
 cd ../volumes

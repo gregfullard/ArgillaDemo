@@ -31,6 +31,8 @@ sudo ln -s /opt/webdrivers/geckodriver /usr/local/bin/geckodriver
 
 ## How to run the tests Locally
 
+Note: These commands must be run from the [REPO_HOME]/bdd/bdd-demo folder
+
 Make sure you're not running in a terminal with a configured http_proxy:
 
     unset http_proxy
@@ -48,6 +50,10 @@ e.g.
 or (in headless mode)
 
     mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless -Dcontext=chrome
+
+or (when you're running headless in the docker container)
+
+    mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless,--no-sandbox -Dcontext=chrome
 
 ### For FireFox:
 

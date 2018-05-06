@@ -47,6 +47,7 @@ First ensure that you have credentials for Docker Hub
 ```
 cd env
 ./first_run.sh
+docker-compose build
 docker-compose up
 ```
 
@@ -55,15 +56,16 @@ up and running for a full demonstration (I'll hopefully automate these over time
 
 * Jenkins Basics
      * Open home page and enter the security key
-     * Configure the admin user
-     * Install default plugins
+     * Install suggested plugins     
+     * Configure the admin user (admin/admin)
+     * Confirm Instance URL
      * Install Blue Ocean plugin
-         * Manage Jenkins > Manage Plugins > Available 
+         * Manage Jenkins > Manage Plugins > Available
          * Type "Blue Ocean"
          * Select the plugin
          * Click "Install without Restart"
      * Install GitLab plugin
-         * Manage Jenkins > Manage Plugins > Available 
+         * Manage Jenkins > Manage Plugins > Available
          * Type "GitLab"
          * Select the plugin
          * Click "Install without Restart"
@@ -73,7 +75,7 @@ up and running for a full demonstration (I'll hopefully automate these over time
      * Set up repositories
 * GitLab Basics
      * Open Home Page
-     * Change root password
+     * Change root password (root/password)
 * GitLab SSH connection with localhost
      * Ref: https://docs.bitnami.com/aws/how-to/create-ci-pipeline/
      * On local Linux host
@@ -95,6 +97,8 @@ up and running for a full demonstration (I'll hopefully automate these over time
          * Save     
 * GitLab Prepare Repo
      * Create empty repository
+         * Project Name: ArgillaDemo
+         * Visibility Level: Public
      * Push this project to GitLab server
 
 ```
@@ -132,12 +136,22 @@ git push -u gitlab --tags
      * (Back in Jenkins) Create Pipeline
 
 ## Kill'em all
-If you want to totally remove all containers from your machine:
+If you want to totally remove all containers from your machine. (In the env folder):
 
 ```
 docker-compose down
-cd env
 ./clean.sh
+```
+
+## Clean up and rebuild all images
+If you want to clean up everything and do a rebuild. (In the env folder):
+
+```
+docker-compose down
+./clean.sh
+./build-all.sh
+docker-compose build
+docker-compose up
 ```
 
 ## Using the environment (Preparing for a demo)
@@ -177,4 +191,3 @@ To kill this bridge, run:
 ```
 sudo ifconfig virbr1 down
 ```
-
