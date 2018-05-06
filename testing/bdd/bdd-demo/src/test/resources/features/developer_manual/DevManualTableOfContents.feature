@@ -6,5 +6,5 @@ Feature: View Developer Manual Table of Contents
   Scenario: Find 'Getting Started' section in the manual
     Given the user is on the Developer Manual home page
     When the user reviews the contents of the table of contents
-    Then they should see an entry for the Getting Started page
+    Then they should see an entry for the 'Getting Started' page
 

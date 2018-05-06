@@ -20,7 +20,7 @@ public class DeveloperManualTocPage extends PageObject {
 	}
 
 	public List<String> getEntries() {
-		WebElementFacade entryList = find(By.tagName("ol"));
+		WebElementFacade entryList = find(By.tagName("ul"));
 		return entryList.findElements(By.tagName("li")).stream().map(element -> element.getText())
 				.collect(Collectors.toList());
 	}
