@@ -44,8 +44,8 @@ cp -R docs/developer_manual/build/html /home/argilla/demo/nginx/dev-manual
 '''
         echo 'Generating User Manual'
         sh '''cd docs/user_manual
-make html
-mkdir -p /home/argilla/demo/nginx/user-manual
+make html'''
+        sh '''mkdir -p /home/argilla/demo/nginx/user-manual
 cp -R docs/user_manual/build/html /home/argilla/demo/nginx/user-manual
 '''
       }
