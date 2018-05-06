@@ -63,7 +63,7 @@ cp -R docs/user_manual/build/html /home/argilla/demo/nginx/user-manual
 mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless,--no-sandbox -Dcontext=chrome'''
       }
     }
-    stage('Launch Drone') {
+    stage('Test Flight') {
       steps {
         sleep 1
         echo 'Launching the Drone'
@@ -75,6 +75,8 @@ mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.dri
     always {
       sh '''mkdir -p /home/argilla/demo/nginx/test-reports
 cp -R testing/bdd/bdd-demo/target/site/serenity /home/argilla/demo/nginx/test-reports'''
+
     }
-}
+
+  }
 }
