@@ -33,26 +33,31 @@ pipeline {
         }
       }
     }
-    stage('Generate Developer Manual') {
+    stage('Documentation') {
       steps {
-        echo 'Generating Documentation'
+        echo 'Generating Developer Manual'
         sleep 1
         sh '''cd docs/developer_manual
 make html
+mkdir -p /home/argilla/demo/nginx/dev-manual
+cp -R docs/developer_manual/build/html /home/argilla/demo/nginx/dev-manual
+'''
+        echo 'Generating User Manual'
+        sh '''cd docs/user_manual
+make html
+mkdir -p /home/argilla/demo/nginx/user-manual
+cp -R docs/user_manual/build/html /home/argilla/demo/nginx/user-manual
 '''
       }
     }
-    stage('Deploy Development Manual') {
+    stage('Prepare Staging') {
       steps {
         sleep 1
-        sh '''mkdir -p /home/argilla/demo/nginx/dev-manual
-mkdir -p /home/argilla/demo/nginx/user-manual
-cp -R docs/developer_manual/build/html /home/argilla/demo/nginx/dev-manual'''
+        echo 'Preparing the Staging Environment'
       }
     }
     stage('Run BDD Tests') {
       steps {
-        sleep 1
         echo 'Running BDD Tests'
         sh '''cd testing/bdd/bdd-demo
 mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless,--no-sandbox -Dcontext=chrome'''
