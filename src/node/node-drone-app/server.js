@@ -13,9 +13,9 @@ app.get('/', (req, res) => {
 
 	var xyz = require("./node_modules/node-bebop/examples/GoDrone");
 
-	//console.log(" >> " + xyz.doDrone());
+	console.log(" >> " + xyz.doDrone());
 
-	res.send('Hello world from the Node Drone\n');
+	res.send('Hello EOH Connect from the Node Drone\n');
 });
 
 var server = app.listen(PORT, HOST);
