@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
 
 	var drone = require("./node_modules/node-bebop/examples/GoDrone");
 
-	drone.sayHowzit();
 	//console.log(" >> " + drone.doDrone());
 
 	res.send('Hello from the NodeJS Drone, by the #DevAnything crew.\n');
