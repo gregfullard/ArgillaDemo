@@ -3,7 +3,6 @@ Overview
 
 .. image:: assets/Architecture_Overview.png
 
-Greg Was Here
 
 **The standard Lorem Ipsum passage, used since the 1500s**
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit,

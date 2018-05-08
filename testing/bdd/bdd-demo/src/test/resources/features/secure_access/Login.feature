@@ -4,7 +4,7 @@ Feature: Log in with username and password
   I want to log int with my username and password
 
   @Pending
-  Scenario: Login with valid username and password XXX
+  Scenario: Login with valid username and password
     Given the user is on login page
     When the user supplies valid login credentials
     And selects to log in
