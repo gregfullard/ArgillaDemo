@@ -14,8 +14,8 @@ import net.thucydides.core.pages.PageObject;
 import java.util.ArrayList;
 import java.util.List;
 
-//@DefaultUrl("http://localhost:8090/dev-manual/html/index.html")
-@DefaultUrl("http://argilla-nginx:80/dev-manual/html/index.html")
+@DefaultUrl("http://localhost:8090/dev-manual/html/index.html")
+//@DefaultUrl("http://argilla-nginx:80/dev-manual/html/index.html")
 public class DeveloperManualTocPage extends PageObject {
 
 	public void reviewEntries() {
