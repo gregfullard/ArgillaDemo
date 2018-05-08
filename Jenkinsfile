@@ -60,7 +60,7 @@ cp -R docs/user_manual/build/html /home/argilla/demo/nginx/user-manual
       steps {
         echo 'Running BDD Tests'
         sh '''cd testing/bdd/bdd-demo
-mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless,--no-sandbox -Dcontext=chrome'''
+mvn clean verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless,--no-sandbox -Dcontext=chrome'''
       }
     }
     stage('Test Flight') {
