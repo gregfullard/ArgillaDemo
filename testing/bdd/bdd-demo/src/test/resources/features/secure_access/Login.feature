@@ -1,5 +1,5 @@
 Feature: Log in with username and password
-  In order to gain gain entry into the EOH secret system
+  In order to gain gain entry into the system
   As an under cover agent
   I want to log int with my username and password
 
