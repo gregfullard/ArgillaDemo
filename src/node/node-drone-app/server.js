@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 	console.log(" >> " + drone.doDrone());
 
-	res.send('Hello from the NodeJS Drone, by the #DevAnything crew.\n');
+	res.send('Hello EOH Connect from the NodeJS Drone, by the #DevAnything crew.\n');
 });
 
 var server = app.listen(PORT, HOST);
