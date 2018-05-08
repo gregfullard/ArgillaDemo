@@ -10,8 +10,12 @@ Welcome to Demo Developer Documentation's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   overview
    getting_started
+   requirements
    architecture
+   environments
+   test_plan
 
 Indices and tables
 ==================
