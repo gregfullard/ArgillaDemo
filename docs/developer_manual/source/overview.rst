@@ -3,7 +3,7 @@ Overview
 
 .. image:: assets/Architecture_Overview.png
 
-EOH #DevAnything is here Bhwaaahaaahaaha
+The safer DevAnything is here
 
 
 **The standard Lorem Ipsum passage, used since the 1500s**
