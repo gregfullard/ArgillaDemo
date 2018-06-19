@@ -200,3 +200,8 @@ Further improvements that still need to be made for a slick experience:
  * Improve the Jenkins docker image to have all the required plugins preinstalled
  * Improve the Jenkins docker image so that Jenkins doesn't require an admin password
  * Install all the SSH keys vie automated script (Probably using Ansible)
+
+
+
+
+mvn clean verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--no-sandbox -Dwebdriver.base.url="http://localhost:8090" -Dcontext=chrome
