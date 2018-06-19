@@ -64,10 +64,19 @@ mvn clean verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriv
       }
     }
     stage('Test Flight') {
-      steps {
-        sleep 1
-        echo 'Launching the Drone'
-        sh 'curl -i http://node-drone-app:8080'
+      parallel {
+        stage('Test Flight') {
+          steps {
+            sleep 1
+            echo 'Launching the Drone'
+            sh 'curl -i http://node-drone-app:8080'
+          }
+        }
+        stage('Demo Something') {
+          steps {
+            echo 'We\'re done'
+          }
+        }
       }
     }
   }
