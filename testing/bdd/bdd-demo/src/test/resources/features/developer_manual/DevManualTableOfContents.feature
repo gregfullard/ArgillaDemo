@@ -1,4 +1,4 @@
-Feature: View Developer Manual Table of Contents
+Feature: View Developer Manual Table of Contents Yes Baby
   In order to get an overview of the manual
   As a Developer
   I want to look at the table of contents of the manual
