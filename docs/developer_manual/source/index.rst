@@ -13,7 +13,7 @@ Welcome to Demo Developer Documentation's documentation!
    overview
    getting_started
    requirements
-   architecture
+   architecture/index
    environments
    test_plan
 

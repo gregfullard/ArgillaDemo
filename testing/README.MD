@@ -42,11 +42,19 @@ The tests are run using mvn. Use the following commands to run the tests and pas
 ### For Chrome
 
     mvn verify -Dwebdriver.chrome.driver=<path-to-chrome-driver> -Dwebdriver.driver=chrome -Dcontext=chrome
-    
+
 e.g.
 
     mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dcontext=chrome
-    
+
+or (running on localhost)
+
+    mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dwebdriver.base.url="http://localhost:8090" -Dcontext=chrome
+
+or (running a specific set of tagged tests on localhost)
+
+    mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dwebdriver.base.url="http://localhost:8090" -Dcontext=chrome -Dcucumber.options="--tags @Testing"
+
 or (in headless mode)
 
     mvn verify -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver -Dwebdriver.driver=chrome -Dchrome.switches=--headless -Dcontext=chrome
@@ -60,5 +68,5 @@ or (when you're running headless in the docker container)
     mvn verify -Dwebdriver.gecko.driver=<path-to-gecko-driver> -Dwebdriver.driver=firefox -Dcontext=firefox
 
 e.g.  
-    
+
     mvn verify -Dwebdriver.gecko.driver=/usr/local/bin/geckodriver -Dwebdriver.driver=firefox -Dcontext=firefox

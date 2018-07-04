@@ -1,5 +1,5 @@
-Architecture
-============
+Architecture Overview
+=====================
 
 4+1 Framework
 -------------
@@ -12,7 +12,7 @@ illustrate the architecture serving as the 'plus one' view.
 
 Hence the model contains 4+1 views.
 
-.. image:: assets/4_plus_1_view_of_sw_architecture.*
+.. image:: ../assets/4_plus_1_view_of_sw_architecture.*
 
 
 **Development view:**
