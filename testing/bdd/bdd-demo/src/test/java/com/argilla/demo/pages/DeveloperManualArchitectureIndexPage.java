@@ -10,7 +10,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://argilla-nginx:80/dev-manual/html/architecture.html")
+@DefaultUrl("http://argilla-nginx:80/dev-manual/html/architecture/index.html")
 public class DeveloperManualArchitectureIndexPage extends PageObject {
 
 	public void reviewEntries() {
