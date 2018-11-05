@@ -6,6 +6,14 @@ echo '****************'
 echo '**************** Setting everything up'
 echo '****************'
 
+# Ensure NPM is preinstalled
+# ==========================
+sudo apt-get install npm
+
+# Ensure docker-compose is preinstalled
+# =====================================
+sudo apt-get install docker-compose
+
 # First build of node-demo-app
 # ============================
 cd ../src/node/node-demo-app

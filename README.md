@@ -40,6 +40,7 @@ Docker
 Docker-Compose
 nodejs
 npm
+Docker Hub Account credentials
 
 ## First Run
 First ensure that you have credentials for Docker Hub
