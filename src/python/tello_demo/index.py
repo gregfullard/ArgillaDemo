@@ -6,26 +6,6 @@ import traceback
 
 app = Flask(__name__)
 
-
-@app.route("/launch")
-def launch():
-    print("Launching Drone")
-    drone1 = Tello('192.168.10.3', 8889)
-    drone1.takeoff()
-    drone1.land()
-    return "Launching drone."
-
-@app.route("/land")
-def land():
-    print("Landing Drone")
-    drone2 = Tello('192.168.10.3', 8889)
-    drone2.land()
-    return "Landing drone."
-
-@app.route("/")
-def hello_world():
-    return "Drone control on!"
-
 class Tello:
     """Wrapper to simply interactions with the Ryze Tello drone."""
 
@@ -379,3 +359,27 @@ class Tello:
 
         """
         return self.send_command('ccw %s' % degrees)
+
+
+drone = Tello('192.168.10.3', 8889)
+
+@app.route("/launch")
+def launch():
+    print("Launching Drone")
+    #drone1 = Tello('192.168.10.3', 8889)
+    drone.takeoff()
+    drone.land()
+    return "Launching drone."
+
+@app.route("/land")
+def land():
+    print("Landing Drone")
+    #drone2 = Tello('192.168.10.3', 8889)
+    drone.land()
+    return "Landing drone."
+
+@app.route("/")
+def hello_world():
+    if drone is None:
+        print("No drone initialised")
+    return "Drone control on!"
