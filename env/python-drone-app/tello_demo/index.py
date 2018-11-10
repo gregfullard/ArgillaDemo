@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/launch")
 def launch():
     print("Launching Drone")
-    drone1 = Tello('192.168.10.3', 8889)
+    drone1 = Tello('172.17.0.2', 8889)
     drone1.takeoff()
     drone1.land()
     return "Launching drone."
@@ -18,7 +18,7 @@ def launch():
 @app.route("/land")
 def land():
     print("Landing Drone")
-    drone2 = Tello('192.168.10.3', 8889)
+    drone2 = Tello('172.17.0.2', 8889)
     drone2.land()
     return "Landing drone."
 
