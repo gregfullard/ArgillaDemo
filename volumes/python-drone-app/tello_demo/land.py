@@ -1,9 +1,7 @@
 import tello
 import time
 
-#drone = tello.Tello('192.168.10.3', 8889)
-drone = tello.Tello('172.17.0.2', 8889)
-drone.takeoff()
+drone = tello.Tello('192.168.10.3', 8889)
 #time.sleep(5)
 #drone.set_speed(2)
 #time.sleep(1)
