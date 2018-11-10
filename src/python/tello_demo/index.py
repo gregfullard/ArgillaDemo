@@ -12,6 +12,7 @@ def launch():
     print("Launching Drone")
     drone1 = Tello('192.168.10.3', 8889)
     drone1.takeoff()
+    drone1.land()
     return "Launching drone."
 
 @app.route("/land")
