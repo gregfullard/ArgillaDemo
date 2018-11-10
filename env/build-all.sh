@@ -95,6 +95,40 @@ cd node-drone-app
 docker build -t node-drone-app .
 cd ..
 
+# Python Demo Image
+# ===============
+# Clear the python-demo-app volume
+# Copy all files from the app folder into the volume and into the Docker env folder
+# This ensures that the container runs correctly with or without a mounted volume
+cd ../volumes/python-demo-app
+rm -rf flask_web
+rm -f bootstrap.sh
+cd ../../src/python/python-demo-app
+cp -R python-demo-app ../../../env/python-demo-app/
+cp bootstrap.sh ../../../volumes/python-demo-app/bootstrap.sh
+cd ../../../env
+
+cd python-demo-app
+docker build -t python-demo-app .
+cd ..
+
+# Python Drone Image
+# ===============
+# Clear the python-drone-app volume
+# Copy all files from the app folder into the volume and into the Docker env folder
+# This ensures that the container runs correctly with or without a mounted volume
+cd ../volumes/python-drone-app
+rm -rf tello_demo
+rm -f bootstrap.sh
+cd ../../src/python/python-drone-app
+cp -R python-drone-app ../../../env/python-drone-app/
+cp bootstrap.sh ../../../volumes/python-drone-app/bootstrap.sh
+cd ../../../env
+
+cd python-drone-app
+docker build -t python-drone-app .
+cd ..
+
 # Done
 echo '****************'
 echo '**************** Done'

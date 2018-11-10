@@ -31,7 +31,6 @@ COPY python-demo-app-readme.md /home/argilla/python-demo-app-readme.md
 
 RUN mkdir /home/argilla/python-demo-app
 WORKDIR /home/argilla/python-demo-app
-COPY test.txt /home/argilla/python-demo-app/test.txt
 COPY bootstrap.sh /home/argilla/python-demo-app/bootstrap.sh
 RUN chmod +x bootstrap.sh
 

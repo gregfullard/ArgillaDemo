@@ -18,10 +18,10 @@ sudo rm -rf jenkins
 
 # Clean GitLab Volume
 # ===================
-sudo rm -rf gitlab 
+sudo rm -rf gitlab
 
-# Clean Demo App Volume
-# =====================
+# Clean Node Demo App Volume
+# ==========================
 cd node-demo-app
 rm -rf node_modules
 rm -f package.json
@@ -29,13 +29,27 @@ rm -f package-lock.json
 rm -f server.js
 cd ..
 
-# Clean Drone App Volume
-# =====================
+# Clean Node Drone App Volume
+# ===========================
 cd node-drone-app
 rm -rf node_modules
 rm -f package.json
 rm -f package-lock.json
 rm -f server.js
+cd ..
+
+# Clean Python Demo App Volume
+# ============================
+cd python-demo-app
+rm -rf flask_web
+rm -f bootstrap.sh
+cd ..
+
+# Clean Python Drone App Volume
+# =============================
+cd python-drone-app
+rm -rf flask_web
+rm -f bootstrap.sh
 cd ..
 
 # Clean NginX volume

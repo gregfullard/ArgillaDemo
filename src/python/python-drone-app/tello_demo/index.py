@@ -1,26 +1,10 @@
-"""License.
-
-Copyright 2018 Todd Mueller <firstnamelastname@gmail.com>
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-"""
-
+from flask import Flask
+import time
 import socket
 import threading
-import time
 import traceback
+
+app = Flask(__name__)
 
 class Tello:
     """Wrapper to simply interactions with the Ryze Tello drone."""
@@ -375,3 +359,29 @@ class Tello:
 
         """
         return self.send_command('ccw %s' % degrees)
+
+
+drone = Tello('172.17.0.2', 8889)
+
+@app.route("/launch")
+def launch():
+    print("Launching Drone")
+    #if drone is None:
+    #    drone = Tello('172.17.0.2', 8889)
+    drone.takeoff()
+    drone.land()
+    return "Launching drone."
+
+@app.route("/land")
+def land():
+    print("Landing Drone")
+    #if drone is None:
+    #    drone = Tello('172.17.0.2', 8889)
+    drone.land()
+    return "Landing drone."
+
+@app.route("/")
+def hello_world():
+    if drone is None:
+        print("No drone initialised")
+    return "Drone control on!"

@@ -61,8 +61,8 @@ services:
     volumes:
       - ../volumes/jenkins:/var/lib/jenkins/
       - ../volumes/node-demo-app:/home/argilla/demo/node-demo-app
-      - ../volumes/node-drone-app:/home/argilla/demo/node-drone-app   
-      - ../volumes/nginx:/home/argilla/demo/nginx         
+      - ../volumes/node-drone-app:/home/argilla/demo/node-drone-app
+      - ../volumes/nginx:/home/argilla/demo/nginx
     depends_on:
 #      - argilla-artifactory
 #      - argilla-sonar
@@ -79,18 +79,33 @@ services:
     ports:
       - "8090:80"
     volumes:
-      - ../volumes/nginx:/usr/share/nginx/html  
-  node-demo-app:
-    build: ./node-demo-app
+      - ../volumes/nginx:/usr/share/nginx/html
+#  node-demo-app:
+#    build: ./node-demo-app
+#    restart: always
+#    ports:
+#      - "49160:8080"
+#    volumes:
+#      - ../volumes/node-demo-app:/usr/src/app
+#  node-drone-app:
+#    build: ./node-drone-app
+#    restart: always
+#    ports:
+#      - "49161:8080"
+#    volumes:
+#      - ../volumes/node-drone-app:/usr/src/app
+  python-demo-app:
+    build: ./python-demo-app
     restart: always
     ports:
-      - "49160:8080"
+      - "49160:5000"
     volumes:
-      - ../volumes/node-demo-app:/usr/src/app
-  node-drone-app:
-    build: ./node-drone-app
+      - ../volumes/python-demo-app:/home/argilla/python-demo-app/
+  python-drone-app:
+    build: ./python-drone-app
     restart: always
     ports:
-      - "49161:8080"
+      - "49161:5000"
+      - "18889:8889"
     volumes:
-      - ../volumes/node-drone-app:/usr/src/app    
+      - ../volumes/python-drone-app:/home/argilla/python-drone-app/

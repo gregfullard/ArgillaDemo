@@ -4,9 +4,9 @@ Build this image on your machine with the following command:
 docker build -t python-demo-app .
 
 Create a container from this image with:
-docker run -p 49161:5000 -i --name demo python-demo-app
+docker run -p 49160:5000 -i --name demo python-demo-app
 or with volumes
-docker run -p 49161:5000 -i --name demo -v /home/gregf/Repos/GregFullard/ArgillaDemo/volumes/python-demo-app:/home/argilla/python-demo-app/  python-demo-app
+docker run -p 49160:5000 -i --name demo -v /home/gregf/Repos/GregFullard/ArgillaDemo/volumes/python-demo-app:/home/argilla/python-demo-app/  python-demo-app
 
 Then you can connect to the container using:
 docker exec -it demo bash
