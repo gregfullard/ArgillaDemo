@@ -49,25 +49,25 @@ cd ..
 # Clear the node-demo-app volume
 # Copy all files from the app folder into the volume and into the Docker env folder
 # This ensures that the container runs correctly with or without a mounted volume
-cd ../volumes/node-demo-app
-rm -rf node_modules
-rm -f package.json
-rm -f package-lock.json
-rm -f server.js
-cd ../../src/node/node-demo-app
-cp package.json ../../../volumes/node-demo-app/package.json
-cp package-lock.json ../../../volumes/node-demo-app/package-lock.json
-cp server.js ../../../volumes/node-demo-app/server.js
-cp -R node_modules ../../../volumes/node-demo-app/
-cp package.json ../../../env/node-demo-app/package.json
-cp package-lock.json ../../../env/node-demo-app/package-lock.json
-cp server.js ../../../env/node-demo-app/server.js
-cp -R node_modules ../../../env/node-demo-app/
-cd ../../../env
-
-cd node-demo-app
-docker build -t node-demo-app .
-cd ..
+#cd ../volumes/node-demo-app
+#rm -rf node_modules
+#rm -f package.json
+#rm -f package-lock.json
+#rm -f server.js
+#cd ../../src/node/node-demo-app
+#cp package.json ../../../volumes/node-demo-app/package.json
+#cp package-lock.json ../../../volumes/node-demo-app/package-lock.json
+#cp server.js ../../../volumes/node-demo-app/server.js
+#cp -R node_modules ../../../volumes/node-demo-app/
+#cp package.json ../../../env/node-demo-app/package.json
+#cp package-lock.json ../../../env/node-demo-app/package-lock.json
+#cp server.js ../../../env/node-demo-app/server.js
+#cp -R node_modules ../../../env/node-demo-app/
+#cd ../../../env
+#
+#cd node-demo-app
+#docker build -t node-demo-app .
+#cd ..
 
 # Node Drone Image
 # ==================
@@ -75,38 +75,37 @@ cd ..
 # Clear the node-drone-app volume
 # Copy all files from the app folder into the volume and into the Docker env folder
 # This ensures that the container runs correctly with or without a mounted volume
-cd ../volumes/node-drone-app
-rm -rf node_modules
-rm -f package.json
-rm -f package-lock.json
-rm -f server.js
-cd ../../src/node/node-drone-app
-cp package.json ../../../volumes/node-drone-app/package.json
-cp package-lock.json ../../../volumes/node-drone-app/package-lock.json
-cp server.js ../../../volumes/node-drone-app/server.js
-cp -R node_modules ../../../volumes/node-drone-app/
-cp package.json ../../../env/node-drone-app/package.json
-cp package-lock.json ../../../env/node-drone-app/package-lock.json
-cp server.js ../../../env/node-drone-app/server.js
-cp -R node_modules ../../../env/node-drone-app/
-cd ../../../env
-
-cd node-drone-app
-docker build -t node-drone-app .
-cd ..
+#cd ../volumes/node-drone-app
+#rm -rf node_modules
+#rm -f package.json
+#rm -f package-lock.json
+#rm -f server.js
+#cd ../../src/node/node-drone-app
+#cp package.json ../../../volumes/node-drone-app/package.json
+#cp package-lock.json ../../../volumes/node-drone-app/package-lock.json
+#cp server.js ../../../volumes/node-drone-app/server.js
+#cp -R node_modules ../../../volumes/node-drone-app/
+#cp package.json ../../../env/node-drone-app/package.json
+#cp package-lock.json ../../../env/node-drone-app/package-lock.json
+#cp server.js ../../../env/node-drone-app/server.js
+#cp -R node_modules ../../../env/node-drone-app/
+#cd ../../../env
+#
+#cd node-drone-app
+#docker build -t node-drone-app .
+#cd ..
 
 # Python Demo Image
 # ===============
 # Clear the python-demo-app volume
 # Copy all files from the app folder into the volume and into the Docker env folder
 # This ensures that the container runs correctly with or without a mounted volume
-cd ../volumes/python-demo-app
-rm -rf flask_web
-rm -f bootstrap.sh
-cd ../../src/python/python-demo-app
-cp -R python-demo-app ../../../env/python-demo-app/
-cp bootstrap.sh ../../../volumes/python-demo-app/bootstrap.sh
-cd ../../../env
+rm -rf ../volumes/python-demo-app/flask_web
+rm -f ../volumes/python-demo-app/bootstrap.sh
+cp -rv ../src/python/python-demo-app ./
+cp ../src/python/python-demo-app/bootstrap.sh ../volumes/python-demo-app/bootstrap.sh
+chmod +x ../volumes/python-demo-app/bootstrap.sh
+cp -rv ../src/python/python-demo-app/flask_web ../volumes/python-demo-app/
 
 cd python-demo-app
 docker build -t python-demo-app .
@@ -117,13 +116,18 @@ cd ..
 # Clear the python-drone-app volume
 # Copy all files from the app folder into the volume and into the Docker env folder
 # This ensures that the container runs correctly with or without a mounted volume
-cd ../volumes/python-drone-app
-rm -rf tello_demo
-rm -f bootstrap.sh
-cd ../../src/python/python-drone-app
-cp -R python-drone-app ../../../env/python-drone-app/
-cp bootstrap.sh ../../../volumes/python-drone-app/bootstrap.sh
-cd ../../../env
+#cd ../volumes/python-drone-app
+#rm -rf tello_demo
+#rm -f bootstrap.sh
+#cd ../../src/python/python-drone-app
+#cp -R python-drone-app ../../../env/python-drone-app/
+#cp bootstrap.sh ../../../volumes/python-drone-app/bootstrap.sh
+#cd ../../../env
+rm -rf ../volumes/python-drone-app/tello_demo
+rm -f ../volumes/python-drone-app/bootstrap.sh
+cp -rv ../src/python/python-drone-app ./
+cp ../src/python/python-drone-app/bootstrap.sh ../volumes/python-drone-app/bootstrap.sh
+cp -rv ../src/python/python-drone-app/tello_demo ../volumes/python-drone-app/
 
 cd python-drone-app
 docker build -t python-drone-app .

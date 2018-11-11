@@ -8,7 +8,7 @@ echo '****************'
 
 # Ensure NPM is preinstalled
 # ==========================
-sudo apt-get install npm
+#sudo apt-get install npm
 
 # Ensure docker-compose is preinstalled
 # =====================================
@@ -16,17 +16,17 @@ sudo apt-get install docker-compose
 
 # First build of node-demo-app
 # ============================
-cd ../src/node/node-demo-app
-npm install
-sudo npm install -g supervisor nodemon
-cd ../../../env
+#cd ../src/node/node-demo-app
+#npm install
+#sudo npm install -g supervisor nodemon
+#cd ../../../env
 
 # First build of node-drone-app
 # =============================
-cd ../src/node/node-drone-app
-npm install
-sudo npm install -g supervisor nodemon
-cd ../../../env
+#cd ../src/node/node-drone-app
+#npm install
+#sudo npm install -g supervisor nodemon
+#cd ../../../env
 
 # Build all docker images
 # =======================

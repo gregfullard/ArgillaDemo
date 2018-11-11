@@ -60,8 +60,10 @@ services:
       - "122:22"
     volumes:
       - ../volumes/jenkins:/var/lib/jenkins/
-      - ../volumes/node-demo-app:/home/argilla/demo/node-demo-app
-      - ../volumes/node-drone-app:/home/argilla/demo/node-drone-app
+#      - ../volumes/node-demo-app:/home/argilla/demo/node-demo-app
+#      - ../volumes/node-drone-app:/home/argilla/demo/node-drone-app
+      - ../volumes/python-demo-app:/home/argilla/demo/python-demo-app
+      - ../volumes/python-drone-app:/home/argilla/demo/python-drone-app
       - ../volumes/nginx:/home/argilla/demo/nginx
     depends_on:
 #      - argilla-artifactory

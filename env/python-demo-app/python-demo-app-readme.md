@@ -19,4 +19,4 @@ or (when running from docker-compose)
 docker logs env_python-demo-app_1
 
 To test the web service, run:
-curl -i localhost:49161
+curl -i localhost:49160

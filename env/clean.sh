@@ -22,21 +22,21 @@ sudo rm -rf gitlab
 
 # Clean Node Demo App Volume
 # ==========================
-cd node-demo-app
-rm -rf node_modules
-rm -f package.json
-rm -f package-lock.json
-rm -f server.js
-cd ..
+#cd node-demo-app
+#rm -rf node_modules
+#rm -f package.json
+#rm -f package-lock.json
+#rm -f server.js
+#cd ..
 
 # Clean Node Drone App Volume
 # ===========================
-cd node-drone-app
-rm -rf node_modules
-rm -f package.json
-rm -f package-lock.json
-rm -f server.js
-cd ..
+#cd node-drone-app
+#rm -rf node_modules
+#rm -f package.json
+#rm -f package-lock.json
+#rm -f server.js
+#cd ..
 
 # Clean Python Demo App Volume
 # ============================
