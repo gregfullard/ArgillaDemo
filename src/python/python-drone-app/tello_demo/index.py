@@ -3,6 +3,7 @@ import time
 import socket
 import threading
 import traceback
+import os
 
 app = Flask(__name__)
 
@@ -360,8 +361,8 @@ class Tello:
         """
         return self.send_command('ccw %s' % degrees)
 
-
-drone = Tello('172.17.0.2', 8889)
+local_ip = os.environ["LOCAL_IP"]
+drone = Tello(local_ip, 8889)
 
 @app.route("/launch")
 def launch():
