@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "47523d1f-f4ac-4d67-9e2c-190aa531ce6b",
+		"name": "ArgillaDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Launch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/launch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"launch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drone On",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Demo App - Say Hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:49160/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49160",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drone App - Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:49161/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49161",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drone App - Launch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:49161/launch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49161",
+					"path": [
+						"launch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drone App - Land",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:49161/land",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49161",
+					"path": [
+						"land"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Land",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/land",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"land"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

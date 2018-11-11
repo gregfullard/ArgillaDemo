@@ -44,4 +44,4 @@ WORKDIR /home/argilla/python-demo-app
 
 EXPOSE 5000
 
-#CMD /home/argilla/python-demo-app/bootstrap.sh
+CMD /home/argilla/python-demo-app/bootstrap.sh
