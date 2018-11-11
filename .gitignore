@@ -23,6 +23,10 @@ volumes/node-drone-app/node_modules
 volumes/node-drone-app/package-lock.json
 volumes/node-drone-app/package.json
 volumes/node-drone-app/server.js
+volumes/python-demo-app/flask_web
+volumes/python-demo-app/bootstrap.sh
+volumes/python-drone-app/tello_demo
+volumes/python-drone-app/bootstrap.sh
 
 # Node files in the env/node-demo-app docker folder (They are copied using a shell script)
 env/node-demo-app/node_modules

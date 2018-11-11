@@ -127,6 +127,7 @@ rm -rf ../volumes/python-drone-app/tello_demo
 rm -f ../volumes/python-drone-app/bootstrap.sh
 cp -rv ../src/python/python-drone-app ./
 cp ../src/python/python-drone-app/bootstrap.sh ../volumes/python-drone-app/bootstrap.sh
+chmod +x ../volumes/python-drone-app/bootstrap.sh
 cp -rv ../src/python/python-drone-app/tello_demo ../volumes/python-drone-app/
 
 cd python-drone-app
